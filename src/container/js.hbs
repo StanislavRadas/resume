@@ -1,0 +1,84 @@
+<header>
+    <section>
+            {{> title data=name big=true}}
+            <br>
+            <div>
+                <p>Description: {{description}}</p>
+            </div>
+            <br>
+            <div>
+                {{#with history}}
+                    <span class="badge text-bg-secondary">Year: {{year}}</span>
+                    <span class="badge text-bg-success">Founder: {{founder}}</span>
+                {{/with}}
+            </div>
+    </section>
+</header>
+<br>
+<hr>
+<main>
+    <section>
+        {{> title data="Types:" big=true}}
+        <div>
+            <ul class="list-group list-group-flush">
+                {{#each types}}
+                <li class="list-group-item">{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{> title data="Syntax:"}}
+            {{#with syntax}}
+                <ul>
+                <li><span class="badge text-bg-secondary">Variables: {{variables}}</span></li>
+                <li><span class="badge text-bg-secondary">Functions: {{functions}}</span></li>
+                <li><span class="badge text-bg-secondary">Conditionals: {{conditionals}}</span></li>
+                <li><span class="badge text-bg-secondary">Loops: {{loops}}</span></li>
+                <li><span class="badge text-bg-secondary">Classes: {{classes}}</span></li>
+                </ul>
+            {{/with}}
+        </div>
+        <br>
+        <div>
+            {{> title data="Features:"}}
+            <ul class="list-group list-group-flush">
+                {{#each features}}
+                <li class="list-group-item">{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{> title data="Libraries:"}}
+            <ul class="list-group list-group-flush">
+                {{#each libraries}}
+                <li class="list-group-item">{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{> title data="Tools:"}}
+            <ul class="list-group list-group-flush">
+                {{#each tools}}
+                <li class="list-group-item">{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{> title data="Community:"}}
+            <ul>
+            {{#each community}}
+                <li>Name: {{name}}</li>
+                <li>Type: {{type}}</li>
+            {{/each}}
+            </ul>
+        </div>
+    </section>
+</main>
