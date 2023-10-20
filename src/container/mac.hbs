@@ -1,0 +1,142 @@
+<header>
+    <section>
+        {{> title data=name big=true}}
+        <br>
+        <div>
+            <span class="badge text-bg-secondary">Description: {{description}}</span>
+            <span class="badge text-bg-secondary">Price: {{price}}</span>
+            <span class="badge text-bg-secondary">Category: {{category}}</span>
+        </div>
+    </section>
+    <br>
+    <hr>
+</header>
+<main>
+{{#with features}}
+    {{>title data= "Features:"}}
+    <br>
+    <div>
+        {{#with processor}}
+        {{>title data= "Processor:"}}
+        <div>
+            <span class="badge text-bg-secondary">brand: {{brand}}</span>
+            <span class="badge text-bg-secondary">model: {{model}}</span>
+            <span class="badge text-bg-secondary">speed: {{speed}}</span>
+            <span class="badge text-bg-secondary">cores: {{cores}}</span>
+            <span class="badge text-bg-secondary">cache: {{cache}}</span>
+        </div>
+        {{/with}}
+        </div>
+        <br>
+        <hr>
+        <div>
+        {{>title data= "Memory:"}}
+        {{#with memory}}
+        <div>
+            <span class="badge text-bg-secondary">type: {{type}}</span>
+            <span class="badge text-bg-secondary">size: {{size}}</span>
+            <span class="badge text-bg-secondary">speed: {{speed}}</span>
+        </div>
+        </div>
+        <br>
+        <hr>
+        {{/with}}
+        <div>
+            {{>title data="Storage:"}}
+            {{#with storage}}
+            <div>
+                <span class="badge text-bg-secondary">type: {{type}}</span>
+                <span class="badge text-bg-secondary">size: {{size}}</span>
+            </div>
+            {{/with}}
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{>title data="Display:"}}
+            {{#with display}}
+                <div>
+                    <span class="badge text-bg-secondary">size: {{size}}</span>
+                    <span class="badge text-bg-secondary">resolution: {{resolution}}</span>
+                    <span class="badge text-bg-secondary">technology: {{technology}}</span>
+                    <span class="badge text-bg-secondary">color_space: {{color_space}}</span>
+                    <span class="badge text-bg-secondary">brightness: {{brightness}}</span>
+                    <span class="badge text-bg-secondary">refresh_rate: {{refresh_rate}}</span>
+                </div>
+            {{/with}}
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{> title data="Graphics:"}}
+            <div>
+                <span class="badge text-bg-secondary">brand: {{brand}}</span>
+                <span class="badge text-bg-secondary">model: {{model}}</span>
+                <span class="badge text-bg-secondary">memory: {{memory}}</span>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{> title data="Ports:"}}
+            <ul>
+            {{#each ports}}
+                <li>
+                    <span class="badge text-bg-secondary">type: {{type}}</span>
+                    <span class="badge text-bg-secondary">count: {{count}}</span>
+                    {{#each features}}
+                        <li><span class="badge text-bg-secondary">{{this}}</span></li>
+                    {{/each}}
+                </li>
+            {{/each}}
+            </ul>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{>title data="Battery:"}}
+            <div>
+                <span class="badge text-bg-secondary">type: {{type}}</span>
+                <span class="badge text-bg-secondary">capacity: {{capacity}}</span>
+                <span class="badge text-bg-secondary">life: {{life}}</span>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{>title data="Weight:"}}
+            <span class="badge text-bg-secondary">weight: {{weight}}</span>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{>title data="Dimensions:"}}
+            <div>
+                <span class="badge text-bg-secondary">height: {{height}}</span>
+                <span class="badge text-bg-secondary">width: {{width}}</span>
+                <span class="badge text-bg-secondary">depth: {{depth}}</span>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{>title data="Dimensions:"}}
+            <div>
+                <span class="badge text-bg-secondary">operating_system: {{operating_system}}</span>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{>title data="Accessories:"}}
+            <div>
+                <ul>
+                    {{#each accessories}}
+                        <li><span class="badge text-bg-secondary">name: {{name}}</span></li>
+                        <li><span class="badge text-bg-secondary">price: {{price}}</span></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+{{/with}}
+</main>
