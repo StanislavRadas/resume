@@ -1,0 +1,148 @@
+<header>
+    <section>
+        {{#with navigation}}
+        <div class="card">
+            <div class="nav">
+                {{#each links}}
+                <div class="nav-item">
+                    <a class="nav-link {{#unless href}} disabled {{/unless}}" href="{{href}}">{{text}}</a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/with}}
+    </section>
+</header>
+<main>
+    <section>
+        <div class="mb-5">
+            {{#with header}}
+                <div>
+                    <h1>{{title}}</h1>
+                </div>
+                <div>
+                    {{#with button}}
+                        <a href="{{link}}" class="btn btn-outline-dark disabled">{{text}}</a>
+                    {{/with}}
+                </div>
+            {{/with}}
+        </div>
+        <div>
+            <hr>
+        </div>
+    </section>
+    <section>
+        <div>
+            <div>
+                {{#each goodsBlock}}
+                {{> cartGoodsItem}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="mt-5">
+            <hr>
+        </div>
+    </section>
+    <section>
+        <div>
+            {{#with total}}
+                <div>
+                    <h3>{{title}}</h3>
+                </div>
+                <div>
+                    <p class="display-6">{{amount}}</p>
+                </div>
+                <div>
+                    <p>{{delivery}}</p>
+                </div>
+                <div>
+                    {{#each buttons}}
+                        {{#if isSuccess}}
+                            <div class="mb-2"><a href="{{link}}" class="btn btn-success">{{text}}</a></div>
+                        {{/if}}
+                        {{#if isOutline}}
+                            <div class="mb-2"><a href="{{link}}" class="btn btn-outline-success">{{text}}</a></div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            {{/with}}
+        </div>
+        <div class="mt-5">
+            <hr>
+        </div>
+    </section>
+    <section>
+        <div>
+            {{#with goodsOtherBlock}}
+                <div class="text-center mb-3">
+                    <h3>{{title}}</h3>
+                </div>
+                <div class="row">
+                    {{#each cards}}
+                    <div class="col-4"> 
+                        <div class="card">
+                            <img src="{{image}}" class="card-img-top" alt="{{title}}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{title}}
+                                    {{#if isHot}}
+                                        <span class="badge text-bg-warning">Hot!</span>
+                                    {{/if}}
+                                    {{#if idNew}}
+                                        <span class="badge text-bg-warning">New</span>
+                                    {{/if}}
+                                </h5>
+                                <p class="card-text">{{description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            {{/with}}
+        </div>
+        <div class="mt-5">
+            <hr>
+        </div>
+    </section>
+    <section>
+        <div>
+            {{#with subscribe}}
+                <div class="card text-bg-dark">
+                    <div class="card-body">
+                        <h2 class="card-title">{{header}}</h2>
+                        <p class="card-text">{{description}}</p>
+                        {{#each buttons}}
+                        <div class="mt-3"><a href="{{link}}" class="btn btn-primary">{{text}}</a></div>
+                        {{/each}}
+                    </div>
+                </div>
+            {{/with}}
+        </div>
+        <div class="mt-5">
+            <hr>
+        </div>
+    </section>
+</main>
+<footer>
+    <section>
+        <div class="nav">
+            <div class="row g-5">
+                {{#each footer}}
+                <div class="col-2">
+                    <div class="nav-item">
+                        <a href="{{[0].link}}" class="btn btn-link nav-link">{{[0].text}}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{[1].link}}" class="btn btn-link nav-link">{{[1].text}}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{[2].link}}" class="btn btn-link nav-link">{{[2].text}}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{[3].link}}" class="btn btn-link nav-link disabled">{{[3].text}}</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+</footer>
