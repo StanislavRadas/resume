@@ -1,0 +1,35 @@
+<div>
+    <ul class="list">
+        {{#each itemList}}
+        <li class="list-group">
+            <div class="row">
+                <div class="col-4">
+                    <p>{{number}}</p>
+                    <p><b>{{status}}</b></p>
+                </div>
+                <div class="col-2">
+                    {{#with amount}}
+                    <p>{{title}}:</p>
+                    <p><b>{{value}}</b></p>
+                    {{/with}}
+                </div>
+                <div class="col-4">
+                    {{#each images}}
+                    <img src="{{this}}" alt="Foto">
+                    {{/each}}
+                </div>
+                <div class="col-2">
+                    {{#with button}}
+                    {{#if isPrimary}}
+                    <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+                    {{/if}}
+                    {{/with}}
+                </div>
+            </div>
+            <div>
+                <hr>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>
