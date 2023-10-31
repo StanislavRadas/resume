@@ -29,10 +29,91 @@ var footer = {
   },
 };
 
-
-
 router.get('/', function (req, res) {
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+    header: {
+      nameProject: 'Resume Project',
+      name: {
+        firstName: 'Stanislav',
+        surname: 'Radas',
+      },
+    },
+    main: {
+      title: 'List of Pages',
+      about: 'This is my first project. Where I used technology of knowelge HTML, Bootstrap, CSS, Handlebars and a little bit of CSS. Under this text you could see a links list of my webpages.',
+      listPages: [
+        {
+          name: 'Group of First pages',
+          link: '/skills',
+        },
+        {
+          name: 'Bio',
+          link: '/bio',
+        },
+        {
+          name: 'Program',
+          link: '/program',
+        },
+        {
+          name: 'Web',
+          link: '/web',
+        },
+        {
+          name: 'Java Script',
+          link: '/js',
+        },
+        {
+          name: 'Car',
+          link: '/car',
+        },
+        {
+          name: 'Mac',
+          link: '/mac'
+        },
+        {
+          name: 'Facebook',
+          link: '/facebook',
+        },
+        {
+          name: 'Task21',
+          link: '/task21',
+        },
+        {
+          name: 'Task22',
+          link: '/task22',
+        },
+        {
+          name: 'Task31',
+          link: '/task31',
+        },
+        {
+          name: 'Shophome',
+          link: '/shophome',
+        },
+        {
+          name: 'Shoporder',
+          link: '/shoporder',
+        },
+        {
+          name: 'Shopcart',
+          link: '/shopcart',
+        },
+        {
+          name: 'Shopprofile',
+          link: '/shopprofile'
+        },
+        {
+          name: 'Shopreview',
+          link: '/shopreview',
+        },
+        {
+          name: 'Shopcatalog',
+          link: '/shopcatalog',
+        },
+      ],
+    }
+  })
 })
 
 
@@ -1101,7 +1182,6 @@ router.get('/task21', function (req, res) {
     },
   })
 })
-
 
 router.get('/task22', function (req, res) {
   res.render('task22', {

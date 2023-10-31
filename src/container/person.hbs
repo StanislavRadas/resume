@@ -1,4 +1,5 @@
 <header>
+    {{> nav}}
 {{#with person}}
     <section>
         <div>
@@ -32,9 +33,9 @@
     <section>
     {{> title data="My Education" big=true}}
         <div>
-            <ul>
+            <ul class="list-group">
                 {{#each education}}
-                <li>
+                <li class="list-group-item">
                     <p>Degree: {{degree}},</p>
                     <p>Major: {{major}},</p>
                     <p>University: {{university}},</p>
@@ -49,9 +50,9 @@
     <section>
         {{> title data="My Experience" big=true}}
         <div>
-            <ul>
+            <ul class="list-group">
                 {{#each workExperience}}
-                <li>
+                <li class="list-group-item">
                     <p>Company: {{company}},</p>
                     <p>Title: {{title}},</p>
                     <p>Period: {{startDate}} - {{endDate}},</p>
@@ -87,8 +88,6 @@
                                 </li>
                                 <div>
                                     <b>Teams:</b>
-                                    <br>
-                                    <br>
                                     <ul>
                                         {{#each teams}}
                                             <li>

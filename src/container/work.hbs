@@ -1,17 +1,11 @@
-{{!-- 
-Це код container файлу для summary сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
---}}
-
-<div>
-{{#with main}}
 <main>
+    {{#with main}}
     <section>
         {{> title data="Work History" big=true}} 
         <div>
-            <ul>
+            <ul class="list-group">
                 {{#each works}}
-                    <li>
+                    <li class="list-group-item">
                         <div>
                             {{position}}
                         </div>
@@ -22,37 +16,24 @@
                             {{else}} (still working) 
                             {{/if}}
                         </div>
-
-                        <br>
-
                         <div>
                             <b>{{company.name}}</b>
                         </div>
-
-                        <br>
-                        <br>
-                        
-                        <div>
+                        <div class="mb-3">
                             <strong>Projects ({{projectAmount}})</strong>
                         </div>
-
-                        <br>
-
-                        <ul>
+                        <ul class="list-group">
                             {{#each projects}}
-                            <li>
+                            <li class="list-group-item">
                                 <div>
-                                    {{> link text=name href=url blank=true noLine=true}}
+                                    <a href="{{url}}">{{name}}</a>
                                 </div>
-                                <br>
                                 <div>
                                     <p>{{about}}</p>
                                 </div>
-                                <br>
                                 <div>
                                     <em>Project stacks ({{stackAmount}})</em>
                                 </div>
-                                <br>
                                 <div>
                                     <ul>
                                         {{#each stacks}}
@@ -84,12 +65,5 @@
             </ul>
         </div>
     </section>
-    
+    {{/with}}
 </main>
-{{/with}}
-</div>
-
-{{!-- 
-    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-    Адже наш layout/default.hbs має вже структуру HTML
---}}

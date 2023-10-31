@@ -1,9 +1,2 @@
-<a href="{{href}}" {{#if blank}} target="_blank" {{/if}}>{{text}}</a> 
+<li class="nav-item"><a href="{{href}}" {{#if blank}} target="_blank" {{/if}} class="nav-link">{{text}}</a></li>
 
-{{#unless noLine}}
-{{#if line}}
- ---
- {{else}}
- /
- {{/if}}
-{{/unless}}
