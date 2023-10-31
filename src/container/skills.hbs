@@ -1,16 +1,11 @@
-{{!-- 
-Це код container файлу для summary сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
---}}
-
 <div>
     {{#with main}}
     <main>
         <section>
             {{> title data="All Skills" big=true}}
-            <ul>
+            <ul class="list-group">
                 {{#each skills}}
-                <li>
+                <li class="list-group-item">
                     {{name}}
                     {{#if point includeZero=true}} ({{point}}) {{/if}}
                     {{#if isTop}} (top!) {{/if}}
@@ -26,9 +21,9 @@
         </section>
         <section>
             {{> title data="My Hobbies"}}
-            <ol>
+            <ol class="list-group">
                 {{#each hobbies}}
-                    <li>
+                    <li class="list-group-item">
                         {{name}}
                         {{#if isMain}}
                         (favourite)

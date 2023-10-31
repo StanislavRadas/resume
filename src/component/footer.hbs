@@ -3,9 +3,9 @@
     <br>
     <div>
         {{#with social}}
-        {{> link text=email.text href=email.href blank=true}}
-        {{> link text=phone.text href=phone.href blank=true}}
-        {{> link text=linkedin.text href=linkedin.href blank=true noLine=true}}
+            <a href="{{email.href}}" class="me-2">{{email.text}}</a>
+            <a href="{{phone.href}}"class="me-2">{{phone.text}}</a>
+            <a href="{{linkedin.href}}"class="me-2">{{linkedin.text}}</a>
         {{/with}}
     </div>
     <br>
